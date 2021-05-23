@@ -4,11 +4,14 @@ import { Funciones } from "./typescript/Funciones";
 import { Contador } from "./components/Contador";
 import { ContadorWhitHook } from './components/ContadorWhitHook';
 import { Login } from "./components/Login";
+import { Usuarios } from "./components/Usuarios";
 
  const App = () => {
   return (
     <div className="mt-2">
       <h1>Intro typeScript</h1>
+      <hr />
+      <Usuarios />
       <hr />
       <Login/>
       <hr />
