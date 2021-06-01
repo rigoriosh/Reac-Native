@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { FAB } from '../components/FAB';
+import { FAB } from '../../components/FAB';
 
 
 export const ContadorScreen = () => {
