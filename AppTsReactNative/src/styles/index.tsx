@@ -17,5 +17,17 @@ export const indexCss = StyleSheet.create({
     avatarContainer:{
         marginTop: 10,        
         alignItems: 'center'
+    },
+    menuContainer:{
+        marginVertical: 20,
+        marginHorizontal:20,
+        
+    },
+    menuItem:{
+        fontSize: 20,
+        
+    },
+    menuBtn:{
+        marginVertical:5
     }
 })

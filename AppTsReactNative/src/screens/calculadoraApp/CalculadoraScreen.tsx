@@ -5,6 +5,7 @@ import { BotnCalc } from '../../components/BotnCalc';
 import { useCalculadora } from '../../hooks/useCalculadora';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { useEffect } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface Propiedades extends DrawerScreenProps<any, any>{}
 
@@ -14,6 +15,7 @@ export const CalculadoraScreen = ({navigation}: Propiedades) => {
     
     const {resultadoAnterior, resultado, reset, positivoNegativo, del, caracterEspecialOprimido, armarExpresion} = useCalculadora();
 
+    const insets = useSafeAreaInsets(); //realiza lo mismo q el safeAre pero se coloca dentro de un View
 
     useEffect(() => {
         navigation.setOptions({
@@ -25,7 +27,7 @@ export const CalculadoraScreen = ({navigation}: Propiedades) => {
     }, [])
     
     return (
-        <View style={stylesCalculadora.container}>
+        <View style={{...stylesCalculadora.container, marginTop:insets.top, ...stylesCalculadora.fondo}}>
             <Text style={stylesCalculadora.resultado2}>{resultadoAnterior}</Text>
             <Text numberOfLines={1} adjustsFontSizeToFit style={stylesCalculadora.resultado}>{resultado}</Text>
             {/* Fila de botones */}

@@ -1,12 +1,13 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react'
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { navigationTheme } from '../../theme/navigationTheme';
 import { useEffect } from 'react';
 import { FAB } from '../../components/FAB';
 import { Boton1 } from '../../components/Boton1';
 import { indexCss } from '../../styles';
 import { DrawerScreenProps } from '@react-navigation/drawer';
+import { BtnHamburguer } from '../../components/BtnHamburguer';
 
 //interface Propiedades extends StackScreenProps<any, any>{}
 interface Propiedades extends DrawerScreenProps<any, any>{}
@@ -18,7 +19,7 @@ export const Pagina1Screen = ({navigation}: Propiedades) => {
         navigation.setOptions({
             title:'Bienvenidos práctica navigation', // le quita el titulo que aparece x defecto al lado de la flecha de regresar
             //headerBackTitle: 'Atras', // aplica para ios, modifica lo anterior
-            headerLeft: () => <Button  title='Menu' onPress={()=>{navigation.toggleDrawer()}}/>
+            headerLeft: () => <BtnHamburguer navigation={navigation}/>
         })
         return () => { }
     }, [])
