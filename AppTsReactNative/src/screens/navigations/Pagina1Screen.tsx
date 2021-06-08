@@ -40,8 +40,8 @@ export const Pagina1Screen = ({navigation}: Propiedades) => {
 
             <Text style={navigationTheme.title1}>Navegando con propiedades</Text>
             <View style={indexCss.flexDirR}>
-                <Boton1 colorFondo={'green'} colorText={'white'} titulo={'Thiago'} accionBtn={test}/>
-                <Boton1 colorFondo={'blue'} colorText={'white'} titulo={'Rigo'} accionBtn={test}/>
+                <Boton1 colorFondo={'green'} colorText={'white'} titulo={'Thiago'} accionBtn={test} iconName={'color-palette'}/>
+                <Boton1 colorFondo={'blue'} colorText={'white'} titulo={'Rigo'} accionBtn={test} iconName={'bicycle'}/>
             </View>
             
         </View>

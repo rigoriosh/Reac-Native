@@ -37,6 +37,10 @@ export const indexCss = StyleSheet.create({
         
     },
     menuBtn:{
-        marginVertical:5
+        marginVertical:5,
+        display: 'flex',
+        flexDirection: 'row',
+        alignContent: 'center',
+        
     }
 })

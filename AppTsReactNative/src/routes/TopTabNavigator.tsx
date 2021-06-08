@@ -1,4 +1,5 @@
 import React from 'react'
+import Icon from 'react-native-vector-icons/Ionicons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { ChatScreen } from '../screens/topTabNavigator/ChatScreen';
 import { ContactsScreen } from '../screens/topTabNavigator/ContactsScreen';
@@ -37,18 +38,18 @@ export const TopTabNavigator = () => {
               let nombreIcon = '';
               switch (props.route.name) {
                 case 'Chat':
-                  nombreIcon = 'Chat'
+                  nombreIcon = 'analytics-outline'
                   break;
                 case 'Contacts':
-                  nombreIcon = 'Contacts'
+                  nombreIcon = 'alarm-outline'
                   break;
                 case 'Albums':
-                  nombreIcon = 'Albums'
+                  nombreIcon = 'apps-outline'
                   break;
               }
               console.log(prop.focused)
               console.log('props.route :', props.route.name)
-              return <Text style={{color: prop.color}}>{nombreIcon}</Text>
+              return <Icon name={nombreIcon} size={20} color={prop.color} />
             }
           })}
     >

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Icon from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Tab1Screen } from '../screens/tabs/Tab1Screen';
 import { StackNavigator } from '../routes/StackNavigator';
@@ -42,18 +42,18 @@ export const TabsNavigatorToIOS = () => {
           let nombreIcon = '';
           switch (props.route.name) {
             case 'Tab1Screen':
-              nombreIcon = 'T1'
+              nombreIcon = 'american-football-outline'
               break;
             case 'TopTabNavigator':
-              nombreIcon = 'TopTN'
+              nombreIcon = 'barbell-outline'
               break;
             case 'StackNavigator':
-              nombreIcon = 'Stack'
+              nombreIcon = 'bar-chart-outline'
               break;
           }
           console.log(prop.focused)
           console.log('props.route :', props.route.name)
-          return <Text style={{color: prop.color}}>{nombreIcon}</Text>
+          return <Icon name={nombreIcon} size={20} color={prop.color} />
         }
       })}
     >
