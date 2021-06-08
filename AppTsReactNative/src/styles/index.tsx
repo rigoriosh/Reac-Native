@@ -1,10 +1,19 @@
 import { StyleSheet } from 'react-native';
+
+export const colores = {
+    color1: '#5856D6',
+    color2: '#FF9427',
+}
+
 export const indexCss = StyleSheet.create({
+    globalMargin:{
+        marginHorizontal: 20
+    },
     color1:{
-        color: '#5856D6'
+        color: colores.color1
     },
     color2:{
-        color: '#FF9427'
+        color: colores.color2
     },
     flexDirR:{
         flexDirection: 'row'
