@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, Text } from 'react-native';
 import { navigationTheme } from '../../theme/navigationTheme';
 import { useEffect } from 'react';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootParams } from '../../routes/StackNavigator';
+import { AuthContext } from '../../context/AuthContext';
+import { DimensionesScreen } from '../diseniosApp/DimensionesScreen';
 
 /* interface RouterParams {
     id: number,
@@ -22,13 +24,20 @@ export const PersonaScreen = (props: Propiedades) => {
     //const params = route.params as RouterParams;
     const params = route.params;
     //console.log(JSON.stringify(props, null, 3));
-
+    const {changeUserName} = useContext(AuthContext);
     useEffect(() => {
         navigation.setOptions({
             title: params.nombre, // le quita el titulo que aparece x defecto al lado de la flecha de regresar
             headerBackTitle: 'Atras' // aplica para ios, modifica lo anterior
         })
+        
         return () => { }
+    }, [])
+
+    useEffect(() => {
+        /// ajuste el use name el en store
+        changeUserName(params.nombre);
+        return () => {}
     }, [])
 
     return (
@@ -37,7 +46,9 @@ export const PersonaScreen = (props: Propiedades) => {
                 props={
                     JSON.stringify(props, null, 2)
                 }
+                
             </Text>
+            <DimensionesScreen/>
         </View>
     )
 }

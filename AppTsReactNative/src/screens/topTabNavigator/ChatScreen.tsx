@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableIcon } from '../../components/TouchableIcon';
 import { indexCss, colores } from '../../styles/index';
 import { useState } from 'react';
+import { Tarea4 } from '../diseniosApp/Tarea4';
 
 
 export const ChatScreen = () => {
@@ -28,7 +29,7 @@ export const ChatScreen = () => {
                 <TouchableIcon accion={btnOprimido} colorIcon={colores.color1} nombreIcon={'images-outline'} sizeIcon={50} />
                 <TouchableIcon accion={btnOprimido} colorIcon={colores.color1} nombreIcon={'leaf-outline'} sizeIcon={50} />
             </View>
-            
+            <Tarea4/>            
         </View>
     )
 }

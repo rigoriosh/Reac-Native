@@ -8,6 +8,7 @@ import { Boton1 } from '../../components/Boton1';
 import { indexCss } from '../../styles';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { BtnHamburguer } from '../../components/BtnHamburguer';
+import { Tarea } from '../diseniosApp/Tarea';
 
 //interface Propiedades extends StackScreenProps<any, any>{}
 interface Propiedades extends DrawerScreenProps<any, any>{}
@@ -43,7 +44,7 @@ export const Pagina1Screen = ({navigation}: Propiedades) => {
                 <Boton1 colorFondo={'green'} colorText={'white'} titulo={'Thiago'} accionBtn={test} iconName={'color-palette'}/>
                 <Boton1 colorFondo={'blue'} colorText={'white'} titulo={'Rigo'} accionBtn={test} iconName={'bicycle'}/>
             </View>
-            
+            <Tarea/>
         </View>
     )
 }

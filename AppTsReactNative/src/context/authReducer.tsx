@@ -14,6 +14,8 @@ export const authReducer = (state:AuthState, action:authTipos ):AuthState => {
         case 'changeFavIcon':
             return{ ...state, favoriteIcon: action.payload }
 
+        case 'changeUsername':
+            return{ ...state, username: action.payload }
         case 'logOut':
             return authInitialState;
 

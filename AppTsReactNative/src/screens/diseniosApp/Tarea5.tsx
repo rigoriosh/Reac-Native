@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Flex } from './Flex';
+
 
 export const Tarea5 = () => {
     return (
@@ -15,6 +15,7 @@ export const Tarea5 = () => {
 
 const styles = StyleSheet.create({
     container:{
+        marginTop:50,
         backgroundColor: '#28425B',
         flex: 1,
         justifyContent:'space-between',

@@ -1,1 +1,1 @@
-export type authTipos = { type: 'signIn' } | { type: 'logOut' } | { type: 'changeFavIcon', payload: string}
+export type authTipos = { type: 'signIn' } | { type: 'logOut' } | { type: 'changeUsername', payload: string } | { type: 'changeFavIcon', payload: string}
