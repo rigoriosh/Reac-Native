@@ -11,13 +11,15 @@ interface Propiedades{
 }
 
 
-export const Boton1 = ({ titulo, colorText, colorFondo, accionBtn, iconName}: Propiedades) => {
+export const Boton1 = ({ titulo='no-title', colorText='white', colorFondo='red', accionBtn, iconName=''}: Propiedades) => {
     return (
         <TouchableOpacity
         style={{...estilos.botonGrande, backgroundColor: colorFondo}}
         onPress={()=>accionBtn(titulo)}
         >
-            <Icon name={iconName} size={20} color={'white'} />
+            {
+                iconName !== '' && <Icon name={iconName} size={20} color={'white'} />
+            }            
             <Text style={{...estilos.titulo, color: colorText}}>
                 {titulo}
             </Text>

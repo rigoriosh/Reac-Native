@@ -6,8 +6,25 @@ export const colores = {
 }
 
 export const indexCss = StyleSheet.create({
+    container:{        
+        flex:1,
+        paddingHorizontal: 20,
+        justifyContent: 'flex-end'        
+    },
     globalMargin:{
         marginHorizontal: 20
+    },
+    title:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        marginVertical: 5
+    },
+    title2:{
+        fontSize: 20,
+        //fontWeight: 'bold',
+        alignSelf: 'flex-end',
+        marginVertical: 5
     },
     color1:{
         color: colores.color1

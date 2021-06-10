@@ -1,15 +1,16 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaView, StatusBar, Text } from 'react-native';
 
 
 import { stylesCalculadora } from './src/theme/calculadoraTheme';
 import { StackNavigator } from './src/routes/StackNavigator';
-import { NavigationContainer } from '@react-navigation/native';
 import { MenuLateralBasico } from './src/routes/MenuLateralBasico';
 import { BoxObjectScreen } from './src/screens/diseniosApp/BoxObjectScreen';
 import { CalculadoraScreen } from './src/screens/calculadoraApp/CalculadoraScreen';
 import { MenuLateral } from './src/routes/MenuLateral';
+import { AuthProvider } from './src/context/AuthContext';
 
 const App = () => {
   return (
@@ -33,7 +34,11 @@ const App = () => {
         {/* <CalculadoraScreen/> */}
         {/* <StackNavigator/> */}
         {/* <MenuLateralBasico/> */}
-        <MenuLateral/>
+        <Store>
+
+          <MenuLateral/>
+
+        </Store>
           
         
       </SafeAreaView>
@@ -41,5 +46,12 @@ const App = () => {
   );
 };
 
+const Store = ({children}: any) =>{
+  return (
+    <AuthProvider>
+      {children}
+    </AuthProvider>
+  )
+}
 
 export default App;
