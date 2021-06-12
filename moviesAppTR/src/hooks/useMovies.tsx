@@ -1,24 +1,86 @@
 import { useEffect, useState } from 'react';
 import movieDB from '../api/movieDB';
-import { Movie, MovieDBNowPlaying } from '../interfaces/movieInterface';
+import { Movie, MoviesDB } from '../interfaces/movieInterface';
 
+interface MoviesState{
+    nowPlaying: Movie[];
+    popular:    Movie[];
+    topRated:   Movie[];
+    upComing:   Movie[];
+}
 
 export const useMovies = () => {
 
-    const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [pelicualasEnCine, setPelicualasEnCine] = useState<Movie[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [stateMovies, setStateMovies] = useState<MoviesState>(
+        {
+            nowPlaying: [],
+            popular: [],
+            topRated: [],
+            upComing: [],
+        }
+    );
+    const [responseError, setResponseError] = useState<any>();
+    
 
     const getMovies = async() => {
-        const resp = await movieDB.get<MovieDBNowPlaying>('/now_playing')/* 
+        
+        try {
+            const nowPlayingPromise =  movieDB.get<MoviesDB>('/now_playing');
+            const popularPromise =  movieDB.get<MoviesDB>('/popular');
+            const respTopRated =  movieDB.get<MoviesDB>('/top_rated');
+            const respUpcoming =  movieDB.get<MoviesDB>('/upcoming');
+    
+            const response = await Promise.all([nowPlayingPromise, popularPromise, respTopRated, respUpcoming]);
+
+            setStateMovies(
+                {
+                    nowPlaying: response[0].data.results,
+                    popular:response[1].data.results,
+                    topRated:response[2].data.results,
+                    upComing:response[3].data.results,
+                });
+
+                setIsLoading(false);
+            
+        } catch (error) {
+            
+            setResponseError(error);
+        }
+        
+
+        
+        /* const popularPromise = await movieDB.get<MoviesDB>('/popular');
+        const topRatedPromise = await movieDB.get<MoviesDB>('/top-rated'); */
+        /* const upComingPromise = await movieDB.get<MoviesDB>('/upcoming') */
+        
+        //const response = await Promise.all([nowPlayingPromise, popularPromise, topRatedPromise, upComingPromise]);
+        
+        /* setStateMovies(
+            {
+                nowPlaying  : nowPlayingPromise.data.results,
+                popular     : popularPromise.data.results,
+                topRated    : topRatedPromise.data.results,
+                upComing    : upComingPromise.data.results,
+            }
+        ) */
+
+        /* setStateMovies({
+            nowPlaying: response[0].data.results,    
+            popular:    response[1].data.results,
+            topRated:   response[2].data.results,
+            upComing:   response[3].data.results,
+        })  */
+        /* 
         .then((resp: any) => {
             setResp(resp.data.results[0].title); 
             console.log(resp.data);
         }) */
 
-        const peliculas = resp.data.results;
+         
 
-        setPelicualasEnCine(peliculas);
-        setIsLoading(false);
+        
+        
 
 
     }
@@ -33,5 +95,5 @@ export const useMovies = () => {
 
 
 
-    return {pelicualasEnCine, isLoading}
+    return {...stateMovies, isLoading, responseError}
 }
