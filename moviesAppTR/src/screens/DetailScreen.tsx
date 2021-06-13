@@ -1,11 +1,13 @@
 import React from 'react'
-import Icon from 'react-native-vector-icons/Ionicons';
+
 import { View, Text, StyleSheet, Image, Dimensions, ScrollView, ActivityIndicator } from 'react-native';
 
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParams } from '../navigation/Navigation';
 import { useMovieDetails } from '../hooks/useMovieDetails';
 import { MovielDetail } from '../components/MovielDetail';
+import { colores } from '../styles/index';
+import { FAB } from '../components/FAB';
 
 const heightScreen = Dimensions.get('screen').height;
 
@@ -19,9 +21,14 @@ export const DetailScreen = ({route}: Props) => {
 
     const {cast, detalleMovie, isLoading, error} = useMovieDetails(movie.id)
 
-    console.log(error);
+    const regresar = () => {
+        console.log(44)
+    }
+
+
     return (
-        <ScrollView>            
+        <ScrollView style={{backgroundColor:colores.color1,}}>    
+            <FAB onPress={regresar} title={'<'} posicion={'topLeft'} tamanio={40}/>        
             <View>
                 <View style={{...styles.poster}}>
                         <Image source={{uri}} style={styles.img}/>
@@ -42,8 +49,8 @@ export const DetailScreen = ({route}: Props) => {
                 ? <Text>{JSON.stringify(error, null, 2)}</Text>
                 :<View>
                     <MovielDetail casting={cast} detalleMovie={detalleMovie}/>
-                    <Text>{JSON.stringify(detalleMovie, null, 2)}</Text>
-                    <Text>{JSON.stringify(cast, null, 2)}</Text>
+                    {/* <Text>{JSON.stringify(detalleMovie, null, 2)}</Text>
+                    <Text>{JSON.stringify(cast, null, 2)}</Text> */}
                 </View>
             }
 

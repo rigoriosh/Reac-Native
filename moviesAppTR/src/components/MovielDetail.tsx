@@ -1,8 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native';
-import { MovieFull, Cast } from '../interfaces/movieInterface';
+import { MovieFull, Cast} from '../interfaces/movieInterface';
 import { HorizontalSlider } from './HorizontalSlider';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import { Casting } from './Casting';
 
 interface Props{
     detalleMovie?: MovieFull;
@@ -25,6 +27,10 @@ export const MovielDetail = ({detalleMovie, casting}:Props) => {
             {/* Presupuesto */}
             <Text style={{fontSize:20, fontWeight:'bold', paddingHorizontal:5}}>Presupuesto:</Text>
             <Text style={{fontSize:15, textAlign:'justify', paddingHorizontal:5}}>{'$ ' + detalleMovie?.budget}</Text>
+
+            {/* Casting */}
+            <Casting casting={casting}/>
+            
         </>
     )
 }

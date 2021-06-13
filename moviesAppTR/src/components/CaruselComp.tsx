@@ -11,7 +11,7 @@ interface Props{
 
 export const CaruselComp = ({movies, sliderWidth}: Props) => {
     return (
-        <View style={{backgroundColor:'white', height: 440}}>
+        <View style={{ height: 440}}>
             <Carousel data={movies || []} renderItem={({item})=>
                 <MoviePoster movie={item} />}
                 sliderWidth={sliderWidth} itemWidth={300} inactiveSlideOpacity={0.8}
