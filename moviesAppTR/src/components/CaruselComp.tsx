@@ -6,15 +6,17 @@ import { MoviePoster } from './MoviePoster';
 
 interface Props{
     movies: Movie[];
-    sliderWidth: number
+    sliderWidth: number;
+    posterActual: React.Dispatch<React.SetStateAction<number>>
 }
 
-export const CaruselComp = ({movies, sliderWidth}: Props) => {
+export const CaruselComp = ({movies, sliderWidth, posterActual}: Props) => {
     return (
         <View style={{ height: 440}}>
             <Carousel data={movies || []} renderItem={({item})=>
                 <MoviePoster movie={item} />}
                 sliderWidth={sliderWidth} itemWidth={300} inactiveSlideOpacity={0.8}
+                onSnapToItem={(index)=>posterActual(index)}
             />
         </View>
     )

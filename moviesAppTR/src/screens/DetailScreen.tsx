@@ -7,13 +7,13 @@ import { RootStackParams } from '../navigation/Navigation';
 import { useMovieDetails } from '../hooks/useMovieDetails';
 import { MovielDetail } from '../components/MovielDetail';
 import { colores } from '../styles/index';
-import { FAB } from '../components/FAB';
+import { BtnRegresar } from '../components/BtnRegresar';
 
 const heightScreen = Dimensions.get('screen').height;
 
 interface Props extends StackScreenProps<RootStackParams, 'Notifications'>{}
 
-export const DetailScreen = ({route}: Props) => {
+export const DetailScreen = ({route, navigation}: Props) => {
 
     const movie = route.params;
 
@@ -22,18 +22,21 @@ export const DetailScreen = ({route}: Props) => {
     const {cast, detalleMovie, isLoading, error} = useMovieDetails(movie.id)
 
     const regresar = () => {
-        console.log(44)
+        navigation.pop();
     }
 
 
     return (
         <ScrollView style={{backgroundColor:colores.color1,}}>    
-            <FAB onPress={regresar} title={'<'} posicion={'topLeft'} tamanio={40}/>        
+                  
+            <BtnRegresar accion={regresar}/>
+
             <View>
                 <View style={{...styles.poster}}>
                         <Image source={{uri}} style={styles.img}/>
                 </View>
             </View>
+
             <View style={styles.containerTitles}>
                 <Text style={styles.subTitle}>{movie.original_title}</Text>
                 <Text style={styles.title}>{movie.title}</Text>
@@ -89,5 +92,8 @@ const styles = StyleSheet.create({
     },
     title:{ fontSize: 20, fontWeight: 'bold' },
     subTitle:{ fontSize: 16, opacity: 0.8 },
-    popularidad:{fontSize:16}
+    popularidad:{fontSize:16},
+    backButton:{
+        position: 'absolute', zIndex: 999, elevation: 9, top: 30, left:5
+    }
 })

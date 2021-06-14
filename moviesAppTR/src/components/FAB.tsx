@@ -38,14 +38,14 @@ export const FAB = ({title, onPress, posicion = 'botonLeft', tamanio}: Props) =>
       <View
         style={{...styles.positionDefault, ...styles[posicion]}}>
         {/* TouchableOpacity */}
-        <TouchableNativeFeedback
-          onPress={()=>{console.log(444)}}
-          background={TouchableNativeFeedback.Ripple('blue', false, 30)}>
+        <TouchableOpacity
+          onPress={onPress}
+          /* background={TouchableNativeFeedback.Ripple('blue', false, 30)} */>
           <View style={{...styles.fab, width:tamanio, height:tamanio}}>
             {/* <Text style={styles.fabTexto}>{title}</Text> */}
             <Icon name="arrow-back-outline" color="white" size={20}/>
           </View>
-        </TouchableNativeFeedback>
+        </TouchableOpacity>
       </View>
     );
   }

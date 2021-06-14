@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
+//import ImageColors from 'react-native-image-colors';
+
 import movieDB from '../api/movieDB';
 import { Movie, MoviesDB } from '../interfaces/movieInterface';
+//import { constantesApp } from '../helpers/constantes';
+//import { getPosterColors } from '../helpers/getPosterColors';
+
+
 
 interface MoviesState{
     nowPlaying: Movie[];
@@ -11,6 +17,8 @@ interface MoviesState{
 
 export const useMovies = () => {
 
+    const [posterActual, setPosterActual] = useState(0);
+    const [colorsPosterActual, setColorsPosterActual] = useState<{primary:string, secundary: string}>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [stateMovies, setStateMovies] = useState<MoviesState>(
         {
@@ -85,15 +93,22 @@ export const useMovies = () => {
 
     }
 
-    useEffect(() => {
+    
 
+    useEffect(() => {
+        
         setIsLoading(true);
         getMovies();
 
         return () => { }
     }, [])
 
+    useEffect(() => {
+        //getColors(posterActual);
+        return () => { }
+    }, [posterActual])
 
 
-    return {...stateMovies, isLoading, responseError}
+
+    return {...stateMovies, isLoading, responseError, setPosterActual, colorsPosterActual}
 }

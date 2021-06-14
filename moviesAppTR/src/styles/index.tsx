@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 export const colores = {
     color1: '#5856D6',
     color2: '#FF9427',
+    color3: '#084F6A'
 }
 
 export const indexCss = StyleSheet.create({
