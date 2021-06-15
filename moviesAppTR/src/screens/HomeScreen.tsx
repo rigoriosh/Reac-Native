@@ -54,16 +54,16 @@ export const HomeScreen = () => {
                                 </Text>
                             </View>
                         : 
-                            <View style={{/* backgroundColor: colores.color1 */}}>
+                            <View style={{marginLeft:0/* backgroundColor: colores.color1 */}}>
                                 <Text style={estilos.titleThiago}>Movie App by R1G0R10SH</Text>
 
                                 <CaruselComp movies={nowPlaying} sliderWidth={width_Wind} posterActual={setPosterActual}/>                            
                                 
                                 <HorizontalSlider movies={popular} title={'Populares'}/>
                                 
-                                <HorizontalSlider movies={topRated} title={'topRated'}/>
+                                <HorizontalSlider movies={topRated} title={'TopRated'}/>
                                 
-                                <HorizontalSlider movies={upComing} title={'upComing'}/>
+                                <HorizontalSlider movies={upComing} title={'UpComing'}/>
                             </View>
                     }
                 
