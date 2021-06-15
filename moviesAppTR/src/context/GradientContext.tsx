@@ -17,7 +17,7 @@ export const GradientContext = createContext({} as ContextProps);
 
 
 
-export const GradientProvider = ({chidren}: any) => {
+export const GradientProvider = ({children}: any) => {
 
     const [colors, setColors] = useState<InterfaceImageColors>({ primary:'transparent', secundary: 'transparent' });
     const [previusColors, setPreviusColors] = useState<InterfaceImageColors>({ primary:'transparent', secundary: 'transparent' });
@@ -32,7 +32,7 @@ export const GradientProvider = ({chidren}: any) => {
 
     return(
         <GradientContext.Provider value={{ colors, previusColors, setMainColors, setMainPrevColors  }}>
-            {chidren}
+            {children}
         </GradientContext.Provider>
     )
 }

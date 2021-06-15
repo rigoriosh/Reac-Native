@@ -12,6 +12,7 @@ import { GradientContext } from '../context/GradientContext';
 import { constantesApp } from '../helpers/constantes';
 import { getPosterColors } from '../helpers/getPosterColors';
 import { useEffect } from 'react';
+import { colores } from '../styles/index';
 
 const {width: width_Wind} = Dimensions.get('window')
 
@@ -23,11 +24,11 @@ export const HomeScreen = () => {
     const {setMainColors} = useContext(GradientContext);
     //const {pelicualasEnCine, isLoading} = useMovies({path:'/popular'});
 
-    const getColors = async(index: number) => {
+    /* const getColors = async(index: number) => {
         console.log('posterActual: ', nowPlaying[index].original_title);
         const URI = `${constantesApp.uriBase}${nowPlaying[index].poster_path}`;
         const config = {};
-        const [primary, secundary] = await getPosterColors(URI);
+        const [primary=colores.color1, secundary=colores.color2] = await getPosterColors(URI);
         //console.log(primary, secundary);
         setMainColors({primary, secundary})
         //setColorsPosterActual({primary, secundary});
@@ -36,7 +37,7 @@ export const HomeScreen = () => {
     useEffect(() => {
         if(nowPlaying.length > 0) getColors(0);
         return () => {}
-    }, [])
+    }, []) */
 
 
     return (

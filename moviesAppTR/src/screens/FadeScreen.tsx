@@ -13,8 +13,8 @@ export const FadeScreen = () => {
             <Animated.View style={{backgroundColor: colores.color3, width: 150, height: 150, borderColor:'white', borderWidth:10, 
                 marginBottom:10, opacity}}/>
 
-            <Button onPress={fadeIn} title="fadeIn"/> 
-            <Button onPress={fadeOut} title="fadeOut"/>
+            <Button onPress={()=>fadeIn()} title="fadeIn"/> 
+            <Button onPress={()=>fadeOut()} title="fadeOut"/>
 
         </View>
     )
