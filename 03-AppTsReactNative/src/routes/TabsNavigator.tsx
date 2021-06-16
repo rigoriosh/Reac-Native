@@ -2,7 +2,7 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Tab1Screen } from '../screens/tabs/Tab1Screen';
-import { StackNavigator } from '../routes/StackNavigator';
+import { StackNavigator } from './StackNavigator';
 import { colores } from '../styles/index';
 import { Platform, Text } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
