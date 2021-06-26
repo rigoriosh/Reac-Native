@@ -6,14 +6,17 @@ import { useAnimation } from '../hooks/useAnimation';
 
 export const Animation101Screen = () => {
    
-    const {textInfo, fadeIn, fadeOut, opacity, top} = useAnimation();
+    const {textInfo, fadeIn, fadeOut, opacity, position, startMovingPosition } = useAnimation();
 
 
     return (
         <View style={estilos.container}>
-            <Animated.View style={{...estilos.purpleBox, opacity, transform:[{translateY: top}]}} />
+            <Animated.View style={{...estilos.purpleBox, opacity, transform:[{translateY: position}]}} />
             <View style={{width: '100%', justifyContent:'space-around', flexDirection:'row', marginTop:10}}>
-                <Button onPress={fadeIn} title={'fadeIn'}/>
+                <Button onPress={()=>{
+                    fadeIn();
+                    startMovingPosition(100);
+                }} title={'fadeIn'}/>
                 <Button onPress={fadeOut} title={'fadeOut'}/>
             </View>
                 <Text>{textInfo}</Text>
