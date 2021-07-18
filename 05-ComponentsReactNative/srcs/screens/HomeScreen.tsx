@@ -14,7 +14,7 @@ export const HomeScreen = () => {
     
 
     const renderListheader = () => {
-        return <HeaderTitle title={'Opciones de Menu'}/>
+        return <HeaderTitle title={'Home Screem'}/>
     }
 
     const itemSepartor = () => {
