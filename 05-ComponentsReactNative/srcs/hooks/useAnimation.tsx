@@ -13,7 +13,7 @@ export const useAnimation = () => {
     const fadeIn = () =>{
         Animated.timing(opacity,{
             toValue:1,
-            duration: 800,
+            duration: 1000,
             useNativeDriver: true
         }).start(()=>{setTextInfo('Fin fadeIn')});
 

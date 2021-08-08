@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FlatListMenuItem } from '../components/FlatListMenuItem';
 import { data } from '../data/menuItems';
 import { HeaderTitle } from '../components/HeaderTitle';
+import { ItemSeparator } from '../components/ItemSeparator';
 
 export const HomeScreen = () => {
 
@@ -17,15 +18,9 @@ export const HomeScreen = () => {
         return <HeaderTitle title={'Home Screem'}/>
     }
 
-    const itemSepartor = () => {
-        return (
-            <View style={{borderBottomWidth:1, opacity:0.4, marginVertical:5}}></View>
-        )
-    }
-    
     return (
         <View style={{flex:1, ...styles.globalMargin}}>            
-            <FlatList ListHeaderComponent={()=>renderListheader()} ItemSeparatorComponent={()=>itemSepartor()}
+            <FlatList ListHeaderComponent={()=>renderListheader()} ItemSeparatorComponent={()=><ItemSeparator/>}
              data={data} renderItem= {({item, index})=><FlatListMenuItem menuItem={item}/>} keyExtractor={(item)=>item.name}/>
         </View>
     )

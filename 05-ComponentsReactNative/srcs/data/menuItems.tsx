@@ -35,5 +35,16 @@ export const data:MenuItem[] = [
         name: 'Section List',
         icon: 'list-outline',
         component: 'CustomSectionListScreen'
+    },
+    {
+        name: 'Modal',
+        icon: 'copy-outline',
+        component: 'ModalScreen'
+    },
+    {
+        name: 'Infiniti Scroll',
+        icon: 'download-outline',
+        component: 'InfinitiScrollScreen'
     }
+    
 ]
