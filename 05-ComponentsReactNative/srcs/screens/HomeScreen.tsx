@@ -20,8 +20,12 @@ export const HomeScreen = () => {
 
     return (
         <View style={{flex:1, ...styles.globalMargin}}>            
-            <FlatList ListHeaderComponent={()=>renderListheader()} ItemSeparatorComponent={()=><ItemSeparator/>}
-             data={data} renderItem= {({item, index})=><FlatListMenuItem menuItem={item}/>} keyExtractor={(item)=>item.name}/>
+            <FlatList 
+                ListHeaderComponent={()=>renderListheader()}
+                ItemSeparatorComponent={()=><ItemSeparator/>}
+                data={data} 
+                renderItem= {({item, index})=><FlatListMenuItem menuItem={item}/>} keyExtractor={(item)=>item.name}
+            />
         </View>
     )
 }
