@@ -19,7 +19,7 @@ export const PokemonScreen = ({navigation, route}: any) => {
     console.log(pokemonFull);
 
     return (
-        <View style={{flex:1}}>
+        <View style={{flex:1, backgroundColor:'black'}}>
             <View style={{backgroundColor:color, ...styles.headerCointainer}}>
                 {/* back button */}
                 <TouchableOpacity
@@ -27,10 +27,10 @@ export const PokemonScreen = ({navigation, route}: any) => {
                     style={{...styles.backBtn, top:top +10}}
                     onPress={()=> navigation.pop()}
                 >
-                    <Icon name="arrow-back-outline" size={35} color="#FFF" />
+                    <Icon name="arrow-back-outline" size={35} color="#555" />
                 </TouchableOpacity>
                 {/* Nombre del pokemon */}
-                <Text style={{...styles.pokemonName, top:top + 40}}>{name + '\n'} #{ id }</Text>
+                <Text style={{...styles.pokemonName, top:top + 40, color:'#000'}}>{name + '\n'} #{ id }</Text>
                 {/* Pokebola blanca */}
                 <Image source={require('../assets/pokebola-blanca.png')} style={styles.pokebola}/>
                 <FadeInImage uri={picture} style={styles.pokemosImg}/>

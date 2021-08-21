@@ -103,10 +103,12 @@ const styles = StyleSheet.create({
     title:{
         fontSize:20,
         fontWeight:'bold',
-        marginTop:20
+        marginTop:20,
+        color:'#fff'
     },
     regularText:{
-        fontSize:19
+        fontSize:19,
+        color:'#fff'
     },
     basicSprite:{
         width:100, height:100,
