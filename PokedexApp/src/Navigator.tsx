@@ -18,7 +18,7 @@ const Stack = createStackNavigator<RootStackParams>();
 
 const Navigator = () => {
     return (
-        <NavigationContainer>
+        
             <Stack.Navigator
                 screenOptions={{
                     headerShown:false,
@@ -30,7 +30,6 @@ const Navigator = () => {
                 <Stack.Screen name="HomeScreen" component={HomeScreen} />
                 <Stack.Screen name="PokemonScreen" component={PokemonScreen} />
             </Stack.Navigator>
-        </NavigationContainer>
     )
 }
 

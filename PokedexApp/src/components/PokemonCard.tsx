@@ -40,7 +40,6 @@ export const PokemonCard = ({pokemon, navigation}:Props ) => {
     }, [])
 
     const goDetailPokemon = (poke: SimplePokemon)=> {
-        console.log({poke});
         navigation.navigate('PokemonScreen', {pokemon:pokemon, color:bgColor});
     }
     return (
