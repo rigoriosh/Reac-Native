@@ -16,7 +16,6 @@ export const PokemonScreen = ({navigation, route}: any) => {
     const {pokemon, color} = route.params;
     const {id, picture, name, } = pokemon;
     const { isLoading, pokemonFull } = usePokemon(id);
-    console.log(pokemonFull);
 
     return (
         <View style={{flex:1, backgroundColor:'black'}}>
