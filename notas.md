@@ -13,3 +13,5 @@ https://ethercreative.github.io/react-native-shadow-generator/
 https://www.npmjs.com/package/react-native-image-colors
 
 https://www.npmjs.com/package/react-native-permissions
+
+https://github.com/react-native-maps/react-native-maps/blob/master/docs/installation.md
